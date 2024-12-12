@@ -24,4 +24,4 @@ Este projeto é uma aplicação web que permite buscar perfis de usuários no Gi
    cd user-repos
    npm install
 **Inicie a aplicação:**
-   npm start
+   npm run dev
