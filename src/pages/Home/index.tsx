@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import SearchForm from '../components/SearchForm';
+import Header from '../../components/Header';
+import SearchForm from '../../components/SearchForm';
 
 function Home() {
   const [error, setError] = useState<string | null>(null);

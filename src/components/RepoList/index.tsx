@@ -1,5 +1,5 @@
-import { Repo } from '../types/GitHub';
-import RepoItem from './RepoItem';
+import { Repo } from '../../types/GitHub';
+import RepoItem from '../RepoItem';
 
 interface RepoListProps {
   repos: Repo[];

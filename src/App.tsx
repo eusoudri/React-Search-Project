@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import Loading from './components/Loading';
 import Home from './pages/Home';
 import { UserProvider } from './context/UserContext';
+import './styles/global.scss';
 
 const UserDetails = lazy(() => import('./pages/UserDetails'));
 const RepoDetails = lazy(() => import('./pages/RepoDetails'));

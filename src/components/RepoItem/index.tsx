@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Repo } from '../types/GitHub';
+import { Repo } from '../../types/GitHub';
 
 interface RepoItemProps {
   repo: Repo;

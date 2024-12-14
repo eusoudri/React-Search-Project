@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
-import { useUserContext } from '../context/UserContext';
+import Header from '../../components/Header';
+import Loading from '../../components/Loading';
+import ErrorMessage from '../../components/ErrorMessage';
+import { useUserContext } from '../../context/UserContext';
 
 function RepoDetails() {
   const { owner, repo } = useParams<{ owner: string; repo: string }>();
