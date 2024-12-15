@@ -19,7 +19,7 @@ function RepoDetails() {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div className="container my-4">
+    <div className="container">
       <Header title={`Detalhes do Repositório: ${owner}/${repo}`} />
       {repoDetails && (
         <div className="card mt-4 p-3">

@@ -1,0 +1,15 @@
+@use '../../styles/variables.scss' as vars;
+
+.infos {
+  p {
+    color: vars.$color-secondary;
+    margin: 0;
+  }
+
+  span {
+    color: vars.$color-primary;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 19px;
+  }
+}

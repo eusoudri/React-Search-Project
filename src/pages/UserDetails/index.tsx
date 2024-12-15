@@ -43,7 +43,7 @@ function UserDetails() {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div className="container my-4">
+    <div className="container">
       <Header title={`Detalhes do Usuário: ${username}`} />
       {user && (
         <UserCard

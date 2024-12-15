@@ -1,0 +1,7 @@
+@use './variables' as vars;
+
+.btn-primary {
+  border: none !important;
+  background-color: vars.$color-primary;
+  width: 150px;
+}

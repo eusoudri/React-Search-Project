@@ -13,15 +13,18 @@ function SearchForm({ onSearch }: SearchFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="d-flex">
+    <form
+      onSubmit={handleSubmit}
+      className="d-flex flex-column flex-lg-row align-items-center align-items-lg-stretch"
+    >
       <input
         type="text"
-        className="form-control me-2"
+        className="form-control form-control-md me-2 p-2"
         placeholder="Digite o usuário do GitHub"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="mt-3 mt-lg-0 btn btn-primary">
         Buscar
       </button>
     </form>
