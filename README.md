@@ -20,8 +20,13 @@ Este projeto é uma aplicação web que permite buscar perfis de usuários no Gi
 ## Como Executar o Projeto Localmente
 
 **Clone o repositório:**
-   git clone https://github.com/eusoudri/user-repos.git
-   cd user-repos
-   npm install
+   - git clone https://github.com/eusoudri/user-repos.git
+   - cd user-repos
+   - npm install
+   - branch principal 'main'
+   - branch desenvolvimento 'dev'
 **Inicie a aplicação:**
-   npm run dev
+   - npm run dev
+
+## Demo - Heroku
+- https://git-find-129f2899f754.herokuapp.com
