@@ -7,6 +7,7 @@ import SortSelect from '../../components/SortSelect';
 import Loading from '../../components/Loading';
 import ErrorMessage from '../../components/ErrorMessage';
 import { useUserContext } from '../../context/UserContext';
+import SearchForm from '../../components/SearchForm';
 
 function UserDetails() {
   const { username } = useParams<{ username: string }>();
@@ -18,7 +19,7 @@ function UserDetails() {
     sortOrder,
     fetchUser,
     fetchUserRepos,
-    setSortOrder
+    setSortOrder,
   } = useUserContext();
 
   const [page, setPage] = useState(1);
@@ -49,7 +50,7 @@ function UserDetails() {
 
   const handleSortChange = (order: 'asc' | 'desc') => {
     setSortOrder(order);
-    fetchUserRepos(username!, order, 1); 
+    fetchUserRepos(username!, order, 1);
     setPage(1);
   };
 
@@ -72,6 +73,10 @@ function UserDetails() {
           )}
         </div>
         <div className="col-12 col-lg-9">
+          <div className="col-12 mx-auto mb-4 mt-4 mt-lg-0">
+            <SearchForm />
+            {error && <div className="alert alert-danger mt-2">{error}</div>}
+          </div>
           <div className="d-flex justify-content-between align-items-center">
             <h4>Repositórios {user && <>{user.public_repos}</>}</h4>
             <SortSelect order={sortOrder} onChange={handleSortChange} />
