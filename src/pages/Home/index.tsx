@@ -14,7 +14,7 @@ function Home() {
       <Header title="GitHub Repos Viewer" />
 
       <div className="d-flex flex-column flex-grow-1 justify-content-lg-center align-items-center">
-        <div className="row w-100 mb-4 infos">
+        <div className="d-none d-lg-flex row w-100 mb-4 infos">
           <div className="col-12 col-lg-4 d-flex justify-content-center flex-column align-items-center text-center flex-lg-row text-lg-start">
             <img width="60px" height="60px" src={item01} alt="info-1" />
             <p className="d-grid mx-2">
@@ -37,7 +37,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="row w-100 mt-4">
+        <div className="row w-100 mt-4 pt-5 pt-lg-0">
           <div className="col-12 col-lg-8 mx-auto">
             <SearchForm onError={setError} />
             {error && <div className="alert alert-danger mt-2">{error}</div>}
