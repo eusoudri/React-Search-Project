@@ -1,4 +1,3 @@
-// types/GitHub.d.ts
 export interface User {
   login: string;
   id: number;

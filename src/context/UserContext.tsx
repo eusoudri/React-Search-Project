@@ -82,7 +82,7 @@ export function UserProvider({ children }: UserProviderProps) {
       setError(null);
   
       try {
-        const response = await getUserRepos(username, page, perPage); // Agora passando os parâmetros de paginação
+        const response = await getUserRepos(username, page, perPage); 
         const newRepos = response.data;
   
         const sorted = newRepos.sort((a: Repo, b: Repo) => {
@@ -91,7 +91,6 @@ export function UserProvider({ children }: UserProviderProps) {
             : b.stargazers_count - a.stargazers_count;
         });
   
-        // Se estamos na primeira página, substituímos. Caso contrário, adicionamos.
         setRepos((prevRepos) => (page === 1 ? sorted : [...prevRepos, ...sorted]));
   
         setSortOrder(order);
