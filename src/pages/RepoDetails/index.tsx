@@ -34,7 +34,7 @@ function RepoDetails() {
 
           <div className="row">
             <div className="card col-12 col-lg-6 mt-4 p-3">
-              <h3>{repoDetails.name}</h3>
+              <h4><strong>{repoDetails.name}</strong></h4>
               <p>{repoDetails.description}</p>
               <hr />
               <p>
