@@ -28,5 +28,5 @@ Este projeto é uma aplicação web que permite buscar perfis de usuários no Gi
 **Inicie a aplicação:**
    - npm run dev
 
-**Demo - Heroku
+## Demo - Heroku
 - https://git-find-129f2899f754.herokuapp.com
