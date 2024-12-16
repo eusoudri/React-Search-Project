@@ -38,11 +38,16 @@ function RepoDetails() {
               <p>{repoDetails.description}</p>
               <hr />
               <p>
-                <strong><i className="bi bi-star"></i></strong> {repoDetails.stargazers_count}
+                <strong>
+                  <i className="bi bi-star"></i>
+                </strong>{' '}
+                {repoDetails.stargazers_count}
               </p>
-              <p>
-                <strong>Linguagem:</strong> {repoDetails.language}
-              </p>
+              {repoDetails.language && (
+                <p>
+                  <strong>Linguagem:</strong> {repoDetails.language}
+                </p>
+              )}
             </div>
 
             <div className="col-12 col-lg-6 mt-4 mt-lg-2 px-lg-4 d-flex align-items-end justify-content-center justify-content-lg-start">

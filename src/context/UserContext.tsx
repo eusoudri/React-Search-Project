@@ -24,7 +24,12 @@ interface UserContextValue {
   setRepoDetails: (repo: Repo | null) => void;
 
   fetchUser: (username: string) => Promise<void>;
-  fetchUserRepos: (username: string, order?: 'asc' | 'desc') => Promise<void>;
+  fetchUserRepos: (
+    username: string,
+    order?: 'asc' | 'desc',
+    page?: number,
+    perPage?: number,
+  ) => Promise<void>;
   fetchRepoDetails: (owner: string, repo: string) => Promise<void>;
 }
 
@@ -72,18 +77,23 @@ export function UserProvider({ children }: UserProviderProps) {
   }, []);
 
   const fetchUserRepos = useCallback(
-    async (username: string, order: 'asc' | 'desc' = 'desc') => {
+    async (username: string, order: 'asc' | 'desc' = 'desc', page: number = 1, perPage: number = 10) => {
       setLoading(true);
       setError(null);
-      setRepos([]);
+  
       try {
-        const response = await getUserRepos(username);
-        const sorted = response.data.sort((a: Repo, b: Repo) => {
+        const response = await getUserRepos(username, page, perPage); // Agora passando os parâmetros de paginação
+        const newRepos = response.data;
+  
+        const sorted = newRepos.sort((a: Repo, b: Repo) => {
           return order === 'asc'
             ? a.stargazers_count - b.stargazers_count
             : b.stargazers_count - a.stargazers_count;
         });
-        setRepos(sorted);
+  
+        // Se estamos na primeira página, substituímos. Caso contrário, adicionamos.
+        setRepos((prevRepos) => (page === 1 ? sorted : [...prevRepos, ...sorted]));
+  
         setSortOrder(order);
       } catch (err: unknown) {
         const axiosErr = err as AxiosError;
