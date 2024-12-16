@@ -4,4 +4,47 @@
   border: none !important;
   background-color: vars.$color-primary;
   width: 150px;
+
+  &:hover {
+    background-color: vars.$color-tertiary-light;
+  }
 }
+
+.btn-secondary {
+  border: none !important;
+  background-color: vars.$color-primary;
+}
+
+.card {
+  background-color: vars.$color-tertiary-main;
+  color: vars.$color-secondary;
+  font-size: 15px;
+
+  .bi {
+    font-size: 14px !important;
+  }
+}
+
+.form-select {
+  background-color: vars.$color-tertiary-main;
+  border: 1px solid vars.$color-tertiary-light;
+  color: vars.$color-secondary;
+  font-size: 15px !important;
+}
+
+.btn-outline-primary {
+  color: vars.$color-primary;
+  border: 1px solid vars.$color-primary;
+
+  &:hover {
+    background-color: vars.$color-tertiary-light;
+  }
+}
+
+.bi {
+  color: vars.$color-secondary;
+  font-size: 20px;
+  margin-right: 7px;
+}
+
+

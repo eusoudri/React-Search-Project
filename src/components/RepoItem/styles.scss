@@ -1,0 +1,16 @@
+@use '../../styles/variables.scss' as vars;
+
+  .text-info {
+    font-size: 12px !important;
+    color: vars.$color-grey;
+  }
+
+  h5 {
+    span {
+      border: 1px solid vars.$color-grey;
+      border-radius: 15px;
+      padding: 0 6px;
+      margin-left: 10px;
+    }
+  }
+

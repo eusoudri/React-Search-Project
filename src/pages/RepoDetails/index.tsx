@@ -19,32 +19,46 @@ function RepoDetails() {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div className="container">
+    <section className="container">
       <Header title={`Detalhes do Repositório: ${owner}/${repo}`} />
       {repoDetails && (
-        <div className="card mt-4 p-3">
-          <h3>{repoDetails.name}</h3>
-          <p>{repoDetails.description}</p>
-          <p>
-            <strong>Estrelas:</strong> {repoDetails.stargazers_count}
-          </p>
-          <p>
-            <strong>Linguagem:</strong> {repoDetails.language}
-          </p>
-          <a
-            href={repoDetails.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Ir para o Repositório no GitHub
-          </a>
-          <Link to={`/user/${owner}`} className="btn btn-secondary ms-2">
-            Voltar
-          </Link>
-        </div>
+        <>
+          <div className="row">
+            <div className="col-4">
+              <Link to={`/user/${owner}`}>
+                <i className="bi bi-box-arrow-in-left"></i>
+                Voltar
+              </Link>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="card col-12 col-lg-6 mt-4 p-3">
+              <h3>{repoDetails.name}</h3>
+              <p>{repoDetails.description}</p>
+              <hr />
+              <p>
+                <strong><i className="bi bi-star"></i></strong> {repoDetails.stargazers_count}
+              </p>
+              <p>
+                <strong>Linguagem:</strong> {repoDetails.language}
+              </p>
+            </div>
+
+            <div className="col-12 col-lg-6 mt-4 mt-lg-2 px-lg-4 d-flex align-items-end justify-content-center justify-content-lg-start">
+              <a
+                href={repoDetails.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Ir para o Repositório no GitHub
+              </a>
+            </div>
+          </div>
+        </>
       )}
-    </div>
+    </section>
   );
 }
 
