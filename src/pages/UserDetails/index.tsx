@@ -77,13 +77,17 @@ function UserDetails() {
             <SearchForm />
             {error && <div className="alert alert-danger mt-2">{error}</div>}
           </div>
-          <div className="d-flex justify-content-between align-items-center">
-            <h4>Repositórios {user && <>{user.public_repos}</>}</h4>
-            <SortSelect order={sortOrder} onChange={handleSortChange} />
+          <div className="row d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-center justify-content-lg-start col-12 col-lg-6">
+              <h4>Repositórios {user && <>{user.public_repos}</>}</h4>
+            </div>
+            <div className="d-flex justify-content-center justify-content-lg-end col-12 col-lg-6">
+              <SortSelect order={sortOrder} onChange={handleSortChange} />
+            </div>
           </div>
           <RepoList repos={repos} />
           {loadingMore && <div className="text-center">Carregando mais...</div>}
-          {hasMore && !loadingMore && (
+          {repos.length >= 10 && hasMore && !loadingMore && (
             <div className="text-center mt-4 mb-4">
               <button className="btn btn-primary" onClick={loadMoreRepos}>
                 Carregar mais
