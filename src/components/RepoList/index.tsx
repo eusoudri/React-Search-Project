@@ -11,11 +11,11 @@ function RepoList({ repos }: RepoListProps) {
   }
 
   return (
-    <div className="mt-3">
+    <section className="mt-3">
       {repos.map((repo) => (
         <RepoItem key={repo.id} repo={repo} />
       ))}
-    </div>
+    </section>
   );
 }
 

@@ -7,6 +7,7 @@ export interface User {
   following: number;
   email: string | null;
   bio: string | null;
+  public_repos: number
 }
 
 export interface Repo {
@@ -20,6 +21,9 @@ export interface Repo {
   language: string | null;
   description: string | null;
   html_url: string;
+  updated_at: date
+  visibility: string
+  forks: number
 }
 
 export interface Error {

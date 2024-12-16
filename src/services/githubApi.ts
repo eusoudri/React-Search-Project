@@ -11,8 +11,13 @@ export function getUserDetails(username: string) {
   return api.get(`/users/${username}`);
 }
 
-export function getUserRepos(username: string) {
-  return api.get(`/users/${username}/repos`);
+export function getUserRepos(username: string, page: number = 1, perPage: number = 10) {
+  return api.get(`/users/${username}/repos`, {
+    params: {
+      page,
+      per_page: perPage,
+    },
+  });
 }
 
 export function getRepoDetails(owner: string, repo: string) {

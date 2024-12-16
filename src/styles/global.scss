@@ -1,12 +1,51 @@
+@use './variables' as vars;
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 17px;
+}
+
+body {
+  background-color: #0c0d1a !important;
+}
+
+h4 {
+  font-size: 19px !important;
+  color: vars.$color-secondary;
+  font-weight: 400 !important;
+}
+
+h5 {
+  font-size: 16px !important;
+  color: vars.$color-secondary;
+  font-weight: 400 !important;
+}
+
+p {
+  margin: 5px 0 !important;
+  font-size: 16px!important;
+}
+
+a {
+  color: vars.$color-secondary;
+  text-decoration: none !important;
+
+  &:hover {
+    color: vars.$color-grey;
+  }
 }
 
 .bg {
-  // background-image: url(../assets/bg.jpg) no-repeat center center;
-  background-color: #0c0d1a;
+  background-color: vars.$color-tertiary;
   background-size: cover;
+}
+
+.details {
+
+  span {
+    color: vars.$color-grey;
+    font-weight: 400;
+    font-size: 16px;
+  }
 }
